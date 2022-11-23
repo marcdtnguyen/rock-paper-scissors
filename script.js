@@ -6,8 +6,6 @@ function playRound(){
     if(isValidInput(playerSelection)){
         printChoices(playerSelection, computerSelection);
         print(getResults(playerSelection, computerSelection));
-    } else {
-        alert("Invalid input: Please choose rock, paper or scissors.")
     }
 }
 
@@ -71,7 +69,11 @@ function getResults(playerSelection, computerSelection){
 };
 
 function isValidInput(playerSelection){
-    return options.includes(playerSelection);
+
+    if(options.includes(playerSelection)){
+        return true;
+    }
+    alert("Invalid input: Please choose rock, paper or scissors.")
 }
 
 
