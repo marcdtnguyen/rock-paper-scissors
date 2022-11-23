@@ -13,12 +13,13 @@ function playGame(){
 }
 
 function playRound(){
-    const playerSelection = getPlayerChoice();
+    let playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
-    if(isValidInput(playerSelection)){
-        printChoices(playerSelection, computerSelection);
-        return getResults(playerSelection, computerSelection);
+    while(!isValidInput(playerSelection)){
+        playerSelection = getPlayerChoice();
     }
+    printChoices(playerSelection, computerSelection);
+    return getResults(playerSelection, computerSelection);
 }
 
 function printChoices(playerSelection, computerSelection){
