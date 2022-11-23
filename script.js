@@ -1,7 +1,7 @@
 const options = ['rock', 'paper', 'scissors'];
 
 function playRound(){
-    const playerSelection = prompt('Rock || Paper || Scissors:', '').toLowerCase();
+    const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
     if(checkInput(playerSelection)){
         alert(`Human throws ${playerSelection}!`);
@@ -10,6 +10,10 @@ function playRound(){
     } else {
         alert("Invalid input: Please choose rock, paper or scissors.")
     }
+}
+
+function getPlayerChoice(){
+    return prompt('Rock || Paper || Scissors:', '').toLowerCase();
 }
 
 function getComputerChoice(){
