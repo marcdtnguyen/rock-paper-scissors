@@ -3,7 +3,7 @@ const options = ['rock', 'paper', 'scissors'];
 function playRound(){
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
-    if(checkInput(playerSelection)){
+    if(isValidInput(playerSelection)){
         alert(`Human throws ${playerSelection}!`);
         alert(`Computer throws ${computerSelection}!`)
         print(getResults(playerSelection, computerSelection));
@@ -66,7 +66,7 @@ function getResults(playerSelection, computerSelection){
 
 };
 
-function checkInput(playerSelection){
+function isValidInput(playerSelection){
     return options.includes(playerSelection);
 }
 
