@@ -1,5 +1,14 @@
 const options = ['rock', 'paper', 'scissors'];
 
+const result = document.querySelector('.result p');
+
+const buttons = document.querySelectorAll('.weapon button');
+buttons.forEach(btn=> btn.addEventListener('click', setInput));
+
+function setInput(e){
+    playRound(e.target.innerHTML);
+}
+
 function playGame(){
     let human = 0,
     cmp = 0;
@@ -15,7 +24,8 @@ function playGame(){
 function playRound(playerSelection){
     const computerSelection = getComputerChoice();
     printChoices(playerSelection.toLowerCase(), computerSelection);
-    return getResults(playerSelection.toLowerCase(), computerSelection);
+    const results = getResults(playerSelection.toLowerCase(), computerSelection);
+    result.innerText = format(results);
 }
 
 function printChoices(playerSelection, computerSelection){
@@ -35,17 +45,14 @@ function getRandomNumber(){
     return Math.floor(Math.random() * 3);
 }
 
-function print(results){
+function format(results){
     switch(results){
         case 'tie':
-            alert('It\'s a tie.');
-            break;
+            return 'It\'s a tie.';
         case 'computer':
-            alert('Computer wins!');
-            break;
+            return 'Computer wins!';
         case 'human':
-            alert('Human wins!');
-            break;
+            return 'Human wins!';
     }
 }
 
@@ -83,11 +90,4 @@ function isValidInput(playerSelection){
         return true;
     }
     alert("Invalid input: Please choose rock, paper or scissors.")
-}
-
-const buttons = document.querySelectorAll('.weapon button');
-buttons.forEach(btn=> btn.addEventListener('click', setInput));
-
-function setInput(e){
-    playRound(e.target.innerHTML);
 }
