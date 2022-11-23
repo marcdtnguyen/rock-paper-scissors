@@ -33,10 +33,6 @@ function printChoices(playerSelection, computerSelection){
     alert(`Computer throws ${computerSelection}!`);
 }
 
-function getPlayerChoice(){
-    return prompt('Rock || Paper || Scissors:', '').toLowerCase();
-}
-
 function getComputerChoice(){
     return options[getRandomNumber()];
 };
@@ -83,11 +79,3 @@ function getResults(playerSelection, computerSelection){
     }
 
 };
-
-function isValidInput(playerSelection){
-
-    if(options.includes(playerSelection)){
-        return true;
-    }
-    alert("Invalid input: Please choose rock, paper or scissors.")
-}
