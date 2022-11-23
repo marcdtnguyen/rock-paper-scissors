@@ -1,6 +1,6 @@
 const options = ['rock', 'paper', 'scissors'];
 
-function game(){
+function playRound(){
     const playerSelection = prompt('Rock || Paper || Scissors:', '').toLowerCase();
     const computerSelection = getComputerChoice();
     if(checkInput(playerSelection)){
@@ -34,7 +34,7 @@ function print(results){
     }
 }
 
-function playRound(playerSelection, computerSelection){
+function getResults(playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         return 'tie';
     } 
@@ -66,4 +66,5 @@ function checkInput(playerSelection){
     return options.includes(playerSelection);
 }
 
-game();
+
+playRound();
