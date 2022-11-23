@@ -4,12 +4,16 @@ function playRound(){
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
     if(isValidInput(playerSelection)){
-        alert(`Human throws ${playerSelection}!`);
-        alert(`Computer throws ${computerSelection}!`)
+        printChoices(playerSelection, computerSelection);
         print(getResults(playerSelection, computerSelection));
     } else {
         alert("Invalid input: Please choose rock, paper or scissors.")
     }
+}
+
+function printChoices(playerSelection, computerSelection){
+    alert(`Human throws ${playerSelection}!`);
+    alert(`Computer throws ${computerSelection}!`);
 }
 
 function getPlayerChoice(){
