@@ -2,6 +2,9 @@ const options = ['rock', 'paper', 'scissors'];
 
 const result = document.querySelector('.result p');
 
+let humanScore = document.querySelector('.human .score');
+let computerScore = document.querySelector('.computer .score');
+
 const buttons = document.querySelectorAll('.weapon button');
 buttons.forEach(btn=> btn.addEventListener('click', setInput));
 
@@ -25,7 +28,23 @@ function playRound(playerSelection){
     const computerSelection = getComputerChoice();
     printChoices(playerSelection.toLowerCase(), computerSelection);
     const results = getResults(playerSelection.toLowerCase(), computerSelection);
+    increment(results)
+
     result.innerText = format(results);
+}
+
+function increment(result){
+    switch(result){
+        case 'computer':
+            computerScore.innerText++;
+            break;
+        case 'human':
+            humanScore.innerText++;
+            break;
+        default: 
+            console.log('tie')
+            break;
+    }
 }
 
 function printChoices(playerSelection, computerSelection){
