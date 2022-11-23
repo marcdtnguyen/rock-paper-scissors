@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    color:white;
+}
+
+body {
+    background-image: url("../resources/background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
