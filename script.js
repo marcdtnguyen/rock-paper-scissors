@@ -88,3 +88,10 @@ function isValidInput(playerSelection){
     }
     alert("Invalid input: Please choose rock, paper or scissors.")
 }
+
+const buttons = document.querySelectorAll('.weapon button');
+buttons.forEach(btn=> btn.addEventListener('click', setInput));
+
+function setInput(e){
+    console.log(e.target.innerText);
+}
