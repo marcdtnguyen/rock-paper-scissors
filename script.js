@@ -1,9 +1,15 @@
 const options = ['rock', 'paper', 'scissors'];
 
 function playGame(){
+    let human = 0,
+    cmp = 0;
     for(let i = 0; i < 5; i++){
-        playRound();
+        const result = playRound();
+        if(result == 'human') human++;
+        if(result == 'computer') cmp++;
     }
+
+    console.log('Human: ', human + '\nComputer: ', cmp)
 }
 
 function playRound(){
@@ -11,7 +17,7 @@ function playRound(){
     const computerSelection = getComputerChoice();
     if(isValidInput(playerSelection)){
         printChoices(playerSelection, computerSelection);
-        print(getResults(playerSelection, computerSelection));
+        return getResults(playerSelection, computerSelection);
     }
 }
 
