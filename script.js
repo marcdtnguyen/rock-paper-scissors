@@ -12,18 +12,6 @@ function setInput(e){
     playRound(e.target.innerHTML);
 }
 
-function playGame(){
-    let human = 0,
-    cmp = 0;
-    for(let i = 0; i < 5; i++){
-        const result = playRound();
-        if(result == 'human') human++;
-        if(result == 'computer') cmp++;
-    }
-
-    console.log('Human: ', human + '\nComputer: ', cmp)
-}
-
 function playRound(playerSelection){
     const computerSelection = getComputerChoice();
     printChoices(playerSelection.toLowerCase(), computerSelection);
