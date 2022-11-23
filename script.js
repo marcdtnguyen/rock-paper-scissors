@@ -12,14 +12,10 @@ function playGame(){
     console.log('Human: ', human + '\nComputer: ', cmp)
 }
 
-function playRound(){
-    let playerSelection = getPlayerChoice();
+function playRound(playerSelection){
     const computerSelection = getComputerChoice();
-    while(!isValidInput(playerSelection)){
-        playerSelection = getPlayerChoice();
-    }
-    printChoices(playerSelection, computerSelection);
-    return getResults(playerSelection, computerSelection);
+    printChoices(playerSelection.toLowerCase(), computerSelection);
+    return getResults(playerSelection.toLowerCase(), computerSelection);
 }
 
 function printChoices(playerSelection, computerSelection){
@@ -93,5 +89,5 @@ const buttons = document.querySelectorAll('.weapon button');
 buttons.forEach(btn=> btn.addEventListener('click', setInput));
 
 function setInput(e){
-    console.log(e.target.innerText);
+    playRound(e.target.innerHTML);
 }
