@@ -29,8 +29,8 @@ function playRound(playerSelection){
 }
 
 function printChoices(playerSelection, computerSelection){
-    alert(`Human throws ${playerSelection}!`);
-    alert(`Computer throws ${computerSelection}!`);
+    console.log(`Human throws ${playerSelection}!`);
+    console.log(`Computer throws ${computerSelection}!`);
 }
 
 function getComputerChoice(){
