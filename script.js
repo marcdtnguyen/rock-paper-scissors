@@ -6,7 +6,7 @@ function playRound(){
     if(checkInput(playerSelection)){
         alert(`Human throws ${playerSelection}!`);
         alert(`Computer throws ${computerSelection}!`)
-        print(playRound(playerSelection, computerSelection));
+        print(getResults(playerSelection, computerSelection));
     } else {
         alert("Invalid input: Please choose rock, paper or scissors.")
     }
