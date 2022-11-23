@@ -1,5 +1,11 @@
 const options = ['rock', 'paper', 'scissors'];
 
+function playGame(){
+    for(let i = 0; i < 5; i++){
+        playRound();
+    }
+}
+
 function playRound(){
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
@@ -76,5 +82,4 @@ function isValidInput(playerSelection){
     alert("Invalid input: Please choose rock, paper or scissors.")
 }
 
-
-playRound();
+playGame();
