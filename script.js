@@ -88,5 +88,3 @@ function isValidInput(playerSelection){
     }
     alert("Invalid input: Please choose rock, paper or scissors.")
 }
-
-playGame();
