@@ -50,3 +50,9 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
+.weapon button {
+    font-size: 2.5rem;
+    background-color: rgb(119, 119, 119);
+    border: outset 5px rgba(158, 158, 158, 0.997);
+}
