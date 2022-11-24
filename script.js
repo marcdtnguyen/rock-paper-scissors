@@ -17,8 +17,23 @@ function playRound(playerSelection){
     printChoices(playerSelection.toLowerCase(), computerSelection);
     const results = getResults(playerSelection.toLowerCase(), computerSelection);
     increment(results)
+    if(isWinner()){
+        result.innerText = format(results);
+        disableBtn();
+        showRestart();
+    }
+}
 
-    result.innerText = format(results);
+function showRestart(){
+    console.log('restart')
+}
+
+function disableBtn(){
+    buttons.forEach(btn=> btn.setAttribute('disabled', true))
+}
+
+function isWinner(){
+    return humanScore.innerText == 3 || computerScore.innerText == 3;
 }
 
 function increment(result){
