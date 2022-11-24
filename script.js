@@ -33,6 +33,7 @@ function restart(){
     humanScore.innerText = 0;
     computerScore.innerHTML = 0;
     restartPage.style.visibility = 'hidden';
+    result.innerText = 'Choose your weapon'
     enableBtn();
 }
 
