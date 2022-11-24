@@ -20,6 +20,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
 }
@@ -83,4 +84,24 @@ main {
 .weapon button:active {
     position: relative;
     top: 2px;
+}
+
+.restart {
+    position: absolute;
+    height: 90vh;
+    width: 90vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 5vw;
+    top: 5vh;
+    border-radius: 10px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restart button {
+    font-size: 2.5rem;
+    background-color: rgb(119, 119, 119);
+    border: outset 5px rgba(158, 158, 158, 0.997);
 }

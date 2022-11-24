@@ -8,6 +8,11 @@ let computerScore = document.querySelector('.computer .score');
 const buttons = document.querySelectorAll('.weapon button');
 buttons.forEach(btn=> btn.addEventListener('click', setInput));
 
+const restartPage = document.querySelector('.restart');
+
+const restartBtn = document.querySelector('.restart button');
+restartBtn.addEventListener('click', restart);
+
 function setInput(e){
     playRound(e.target.innerHTML);
 }
@@ -20,16 +25,27 @@ function playRound(playerSelection){
     if(isWinner()){
         result.innerText = format(results);
         disableBtn();
-        showRestart();
+        enableRestart();
     }
 }
 
-function showRestart(){
-    console.log('restart')
+function restart(){
+    humanScore.innerText = 0;
+    computerScore.innerHTML = 0;
+    restartPage.style.visibility = 'hidden';
+    enableBtn();
+}
+
+function enableRestart(){
+    restartPage.style.visibility = 'visible';
 }
 
 function disableBtn(){
     buttons.forEach(btn=> btn.setAttribute('disabled', true))
+}
+
+function enableBtn(){
+    buttons.forEach(btn=> btn.removeAttribute('disabled'))
 }
 
 function isWinner(){
