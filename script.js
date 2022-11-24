@@ -17,6 +17,9 @@ const restartPage = document.querySelector('.restart');
 const restartBtn = document.querySelector('.restart button');
 restartBtn.addEventListener('click', restart);
 
+const test = document.querySelector('audio[src="./resources/audio/test-your-might.mp3"]');
+const fatality = document.querySelector('audio[src="./resources/audio/fatality.mp3"]');
+
 function setInput(e){
     playRound(e.target.innerHTML);
 }
@@ -30,6 +33,8 @@ function playRound(playerSelection){
         result.innerText = format(results);
         disableBtn();
         enableRestart();
+        fatality.currentTime = 0;
+        fatality.play();
     }
 }
 
@@ -40,12 +45,15 @@ function restart(){
     main.style.visibility = 'visible';
     result.innerText = 'Choose your weapon'
     enableBtn();
+    test.currentTime = 0;
+    test.play()
 }
 
 function enableRestart(){
     main.style.visibility = 'hidden';
     scoreBoard.style.visibility = 'visible';
     restartPage.style.visibility = 'visible';
+
 }
 
 function disableBtn(){
