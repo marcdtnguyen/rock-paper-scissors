@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "mk1";
+    src: url("../resources/fonts/mk1.ttf") format("TrueType");
+}
+
+@font-face {
+    font-family: "mk2";
+    src: url("../resources/fonts/mk2.ttf") format("TrueType");
+}
+
 * {
     box-sizing: border-box;
     color:white;
