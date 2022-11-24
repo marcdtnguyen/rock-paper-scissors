@@ -1,6 +1,10 @@
 const options = ['rock', 'paper', 'scissors'];
 
+const main = document.querySelector('main');
+
 const result = document.querySelector('.result p');
+
+const scoreBoard = document.querySelector('.scoreBoard');
 
 let humanScore = document.querySelector('.human .score');
 let computerScore = document.querySelector('.computer .score');
@@ -33,11 +37,14 @@ function restart(){
     humanScore.innerText = 0;
     computerScore.innerHTML = 0;
     restartPage.style.visibility = 'hidden';
+    main.style.visibility = 'visible';
     result.innerText = 'Choose your weapon'
     enableBtn();
 }
 
 function enableRestart(){
+    main.style.visibility = 'hidden';
+    scoreBoard.style.visibility = 'visible';
     restartPage.style.visibility = 'visible';
 }
 
